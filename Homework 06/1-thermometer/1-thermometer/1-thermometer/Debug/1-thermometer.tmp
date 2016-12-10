@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\Debug\1-thermometer.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>1-thermometer.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>1-thermometer.map</FILE>
+  <FILE>1-thermometer.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RST_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>32</LINE></RST_ISR>
+  <AC_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>13</LINE></AC_ISR>
+  <AC_ISR_TURN_ON><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>24</LINE></AC_ISR_TURN_ON>
+  <TURN_OFF><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>58</LINE></TURN_OFF>
+  <AC_ISR_END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>27</LINE></AC_ISR_END>
+  <TURN_ON><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>52</LINE></TURN_ON>
+  <END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\1-thermometer\1-thermometer\1-thermometer\main.asm</FILE><LINE>50</LINE></END>
+ </LABELS>
+</ASSEMBLER_INFO>

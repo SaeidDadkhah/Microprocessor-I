@@ -1,0 +1,51 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\Debug\2-thermometer-heater.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>2-thermometer-heater.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>2-thermometer-heater.map</FILE>
+  <FILE>2-thermometer-heater.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RST_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>164</LINE></RST_ISR>
+  <ADC_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>88</LINE></ADC_ISR>
+  <CALC_TEMP><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>39</LINE></CALC_TEMP>
+  <CHECK_MSD><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>44</LINE></CHECK_MSD>
+  <MSD_IS_DONE><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>51</LINE></MSD_IS_DONE>
+  <LCD_wait><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>338</LINE></LCD_wait>
+  <LCD_command><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>257</LINE></LCD_command>
+  <LCD_putchar><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>221</LINE></LCD_putchar>
+  <LOOP1><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>72</LINE></LOOP1>
+  <LOOP2><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>74</LINE></LOOP2>
+  <ADC_ISR_END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>82</LINE></ADC_ISR_END>
+  <MAX_MODE><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>147</LINE></MAX_MODE>
+  <MIN_MODE><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>132</LINE></MIN_MODE>
+  <MORE_THAN_MIN><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>118</LINE></MORE_THAN_MIN>
+  <LESS_THAN_MIN><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>113</LINE></LESS_THAN_MIN>
+  <LESS_THAN_MAX><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>127</LINE></LESS_THAN_MAX>
+  <MORE_THAN_MAX><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>122</LINE></MORE_THAN_MAX>
+  <LCD_init><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>356</LINE></LCD_init>
+  <END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>193</LINE></END>
+  <lcd_command8><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>199</LINE></lcd_command8>
+  <LCD_getchar><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>289</LINE></LCD_getchar>
+  <LCD_getaddr><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>314</LINE></LCD_getaddr>
+  <LCD_delay><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>345</LINE></LCD_delay>
+  <LCD_delay_outer><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>347</LINE></LCD_delay_outer>
+  <LCD_delay_inner><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm</FILE><LINE>349</LINE></LCD_delay_inner>
+ </LABELS>
+</ASSEMBLER_INFO>
