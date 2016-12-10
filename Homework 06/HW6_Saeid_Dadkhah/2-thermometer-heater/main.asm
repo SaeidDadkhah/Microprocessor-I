@@ -194,6 +194,9 @@ END:
 	in r16, ADCSRA
 	ori r16, (1 << ADEN) | (1 << ADSC)
 	out ADCSRA, r16
+
+	ldi r16, (0 << SM2) | (0 << SM1) | (1 << SM0) | (1 << SE)
+	sleep
 	jmp END
 
 lcd_command8:	;used for init (we need some 8-bit commands to switch to 4-bit mode!)

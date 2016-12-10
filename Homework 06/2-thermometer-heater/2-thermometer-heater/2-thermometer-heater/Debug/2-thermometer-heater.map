@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm Sat Dec 10 17:51:49 2016
+AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm Sat Dec 10 22:24:24 2016
 
 
 EQU  SIGNATURE_000 0000001e
@@ -615,9 +615,9 @@ CSEG ADC_ISR      00000047
 CSEG CALC_TEMP    0000001e
 CSEG CHECK_MSD    00000021
 CSEG MSD_IS_DONE  00000027
-CSEG LCD_wait     00000111
-CSEG LCD_command  000000c7
-CSEG LCD_putchar  000000a7
+CSEG LCD_wait     00000113
+CSEG LCD_command  000000c9
+CSEG LCD_putchar  000000a9
 CSEG LOOP1        0000003c
 CSEG LOOP2        0000003d
 CSEG ADC_ISR_END  00000043
@@ -627,11 +627,11 @@ CSEG MORE_THAN_MIN 0000005e
 CSEG LESS_THAN_MIN 0000005a
 CSEG LESS_THAN_MAX 00000065
 CSEG MORE_THAN_MAX 00000061
-CSEG LCD_init     0000011c
+CSEG LCD_init     0000011e
 CSEG END          00000091
-CSEG lcd_command8 00000096
-CSEG LCD_getchar  000000e4
-CSEG LCD_getaddr  000000fb
-CSEG LCD_delay    00000115
-CSEG LCD_delay_outer 00000116
-CSEG LCD_delay_inner 00000117
+CSEG lcd_command8 00000098
+CSEG LCD_getchar  000000e6
+CSEG LCD_getaddr  000000fd
+CSEG LCD_delay    00000117
+CSEG LCD_delay_outer 00000118
+CSEG LCD_delay_inner 00000119

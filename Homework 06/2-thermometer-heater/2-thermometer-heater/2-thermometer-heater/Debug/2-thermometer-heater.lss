@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm Sat Dec 10 17:51:49 2016
+AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heater\2-thermometer-heater\2-thermometer-heater\main.asm Sat Dec 10 22:24:24 2016
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc'
@@ -927,17 +927,17 @@ AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heate
 00002a 0e60                      			add r6, r16
 00002b 0e70                      			add r7, r16
                                  
-00002c 940e 0111                 			call LCD_wait
+00002c 940e 0113                 			call LCD_wait
 00002e e011                      			ldi argument, 0x01
-00002f 940e 00c7                 			call LCD_command
+00002f 940e 00c9                 			call LCD_command
                                  	
-000031 940e 0111                 			call LCD_wait
+000031 940e 0113                 			call LCD_wait
 000033 2d17                      			mov argument, r7	;write MSB to the LCD char data RAM
-000034 940e 00a7                 			call LCD_putchar
+000034 940e 00a9                 			call LCD_putchar
                                  	
-000036 940e 0111                 			call LCD_wait
+000036 940e 0113                 			call LCD_wait
 000038 2d16                      			mov argument, r6	;write LSB to the LCD char data RAM
-000039 940e 00a7                 			call LCD_putchar
+000039 940e 00a9                 			call LCD_putchar
                                  			
 00003b ef0f                      			ldi r16, 0xFF
                                  			LOOP1:
@@ -1053,7 +1053,7 @@ AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heate
 00008c ec08                      	ldi r16, (1 << ADEN) | (1 << ADSC) |  (1 << ADIE)
 00008d b906                      	out ADCSRA, r16
                                  	
-00008e 940e 011c                 	call LCD_init
+00008e 940e 011e                 	call LCD_init
                                  
 000090 9478                      	sei
                                  	
@@ -1065,189 +1065,192 @@ AVRASM ver. 2.2.6  C:\Users\Saeid Dadkhah\Desktop\Homework06\2-thermometer-heate
 000091 b106                      	in r16, ADCSRA
 000092 6c00                      	ori r16, (1 << ADEN) | (1 << ADSC)
 000093 b906                      	out ADCSRA, r16
-000094 940c 0091                 	jmp END
+                                 
+000094 e500                      	ldi r16, (0 << SM2) | (0 << SM1) | (1 << SM0) | (1 << SE)
+000095 9588                      	sleep
+000096 940c 0091                 	jmp END
                                  
                                  lcd_command8:	;used for init (we need some 8-bit commands to switch to 4-bit mode!)
-000096 b304                      	in	temp, DDRC		;we need to set the high nibble of DDRC while leaving
+000098 b304                      	in	temp, DDRC		;we need to set the high nibble of DDRC while leaving
                                  					;the other bits untouched. Using temp for that.
-000097 6f00                      	sbr	temp, 0b11110000	;set high nibble in temp
-000098 bb04                      	out	DDRC, temp		;write value to DDRC again
-000099 b305                      	in	temp, PORTC		;then get the port value
-00009a 700f                      	cbr	temp, 0b11110000	;and clear the data bits
-00009b 7f10                      	cbr	argument, 0b00001111	;then clear the low nibble of the argument
+000099 6f00                      	sbr	temp, 0b11110000	;set high nibble in temp
+00009a bb04                      	out	DDRC, temp		;write value to DDRC again
+00009b b305                      	in	temp, PORTC		;then get the port value
+00009c 700f                      	cbr	temp, 0b11110000	;and clear the data bits
+00009d 7f10                      	cbr	argument, 0b00001111	;then clear the low nibble of the argument
                                  					;so that no control line bits are overwritten
-00009c 2b01                      	or	temp, argument		;then set the data bits (from the argument) in the
+00009e 2b01                      	or	temp, argument		;then set the data bits (from the argument) in the
                                  					;Port value
-00009d bb05                      	out	PORTC, temp		;and write the port value.
-00009e 9aab                      	sbi	PORTC, LCD_E		;now strobe E
-00009f 0000                      	nop
-0000a0 0000                      	nop
+00009f bb05                      	out	PORTC, temp		;and write the port value.
+0000a0 9aab                      	sbi	PORTC, LCD_E		;now strobe E
 0000a1 0000                      	nop
-0000a2 98ab                      	cbi	PORTC, LCD_E
-0000a3 b304                      	in	temp, DDRC		;get DDRC to make the data lines input again
-0000a4 700f                      	cbr	temp, 0b11110000	;clear data line direction bits
-0000a5 bb04                      	out	DDRC, temp		;and write to DDRC
-0000a6 9508                      ret
+0000a2 0000                      	nop
+0000a3 0000                      	nop
+0000a4 98ab                      	cbi	PORTC, LCD_E
+0000a5 b304                      	in	temp, DDRC		;get DDRC to make the data lines input again
+0000a6 700f                      	cbr	temp, 0b11110000	;clear data line direction bits
+0000a7 bb04                      	out	DDRC, temp		;and write to DDRC
+0000a8 9508                      ret
                                  
                                  lcd_putchar:
-0000a7 931f                      	push	argument		;save the argmuent (it's destroyed in between)
-0000a8 b304                      	in	temp, DDRC		;get data direction bits
-0000a9 6f00                      	sbr	temp, 0b11110000	;set the data lines to output
-0000aa bb04                      	out	DDRC, temp		;write value to DDRC
-0000ab b305                      	in	temp, PORTC		;then get the data from PORTC
-0000ac 7001                      	cbr	temp, 0b11111110	;clear ALL LCD lines (data and control!)
-0000ad 7f10                      	cbr	argument, 0b00001111	;we have to write the high nibble of our argument first
+0000a9 931f                      	push	argument		;save the argmuent (it's destroyed in between)
+0000aa b304                      	in	temp, DDRC		;get data direction bits
+0000ab 6f00                      	sbr	temp, 0b11110000	;set the data lines to output
+0000ac bb04                      	out	DDRC, temp		;write value to DDRC
+0000ad b305                      	in	temp, PORTC		;then get the data from PORTC
+0000ae 7001                      	cbr	temp, 0b11111110	;clear ALL LCD lines (data and control!)
+0000af 7f10                      	cbr	argument, 0b00001111	;we have to write the high nibble of our argument first
                                  					;so mask off the low nibble
-0000ae 2b01                      	or	temp, argument		;now set the argument bits in the Port value
-0000af bb05                      	out	PORTC, temp		;and write the port value
-0000b0 9aa9                      	sbi	PORTC, LCD_RS		;now take RS high for LCD char data register access
-0000b1 9aab                      	sbi	PORTC, LCD_E		;strobe Enable
-0000b2 0000                      	nop
-0000b3 0000                      	nop
+0000b0 2b01                      	or	temp, argument		;now set the argument bits in the Port value
+0000b1 bb05                      	out	PORTC, temp		;and write the port value
+0000b2 9aa9                      	sbi	PORTC, LCD_RS		;now take RS high for LCD char data register access
+0000b3 9aab                      	sbi	PORTC, LCD_E		;strobe Enable
 0000b4 0000                      	nop
-0000b5 98ab                      	cbi	PORTC, LCD_E
-0000b6 911f                      	pop	argument		;restore the argument, we need the low nibble now...
-0000b7 700f                      	cbr	temp, 0b11110000	;clear the data bits of our port value
-0000b8 9512                      	swap	argument		;we want to write the LOW nibble of the argument to
+0000b5 0000                      	nop
+0000b6 0000                      	nop
+0000b7 98ab                      	cbi	PORTC, LCD_E
+0000b8 911f                      	pop	argument		;restore the argument, we need the low nibble now...
+0000b9 700f                      	cbr	temp, 0b11110000	;clear the data bits of our port value
+0000ba 9512                      	swap	argument		;we want to write the LOW nibble of the argument to
                                  					;the LCD data lines, which are the HIGH port nibble!
-0000b9 7f10                      	cbr	argument, 0b00001111	;clear unused bits in argument
-0000ba 2b01                      	or	temp, argument		;and set the required argument bits in the port value
-0000bb bb05                      	out	PORTC, temp		;write data to port
-0000bc 9aa9                      	sbi	PORTC, LCD_RS		;again, set RS
-0000bd 9aab                      	sbi	PORTC, LCD_E		;strobe Enable
-0000be 0000                      	nop
-0000bf 0000                      	nop
+0000bb 7f10                      	cbr	argument, 0b00001111	;clear unused bits in argument
+0000bc 2b01                      	or	temp, argument		;and set the required argument bits in the port value
+0000bd bb05                      	out	PORTC, temp		;write data to port
+0000be 9aa9                      	sbi	PORTC, LCD_RS		;again, set RS
+0000bf 9aab                      	sbi	PORTC, LCD_E		;strobe Enable
 0000c0 0000                      	nop
-0000c1 98ab                      	cbi	PORTC, LCD_E
-0000c2 98a9                      	cbi	PORTC, LCD_RS
-0000c3 b304                      	in	temp, DDRC
-0000c4 700f                      	cbr	temp, 0b11110000	;data lines are input again
-0000c5 bb04                      	out	DDRC, temp
-0000c6 9508                      ret
+0000c1 0000                      	nop
+0000c2 0000                      	nop
+0000c3 98ab                      	cbi	PORTC, LCD_E
+0000c4 98a9                      	cbi	PORTC, LCD_RS
+0000c5 b304                      	in	temp, DDRC
+0000c6 700f                      	cbr	temp, 0b11110000	;data lines are input again
+0000c7 bb04                      	out	DDRC, temp
+0000c8 9508                      ret
                                  
                                  lcd_command:	;same as LCD_putchar, but with RS low!
-0000c7 931f                      	push	argument
-0000c8 b304                      	in	temp, DDRC
-0000c9 6f00                      	sbr	temp, 0b11110000
-0000ca bb04                      	out	DDRC, temp
-0000cb b305                      	in	temp, PORTC
-0000cc 7001                      	cbr	temp, 0b11111110
-0000cd 7f10                      	cbr	argument, 0b00001111
-0000ce 2b01                      	or	temp, argument
+0000c9 931f                      	push	argument
+0000ca b304                      	in	temp, DDRC
+0000cb 6f00                      	sbr	temp, 0b11110000
+0000cc bb04                      	out	DDRC, temp
+0000cd b305                      	in	temp, PORTC
+0000ce 7001                      	cbr	temp, 0b11111110
+0000cf 7f10                      	cbr	argument, 0b00001111
+0000d0 2b01                      	or	temp, argument
                                  
-0000cf bb05                      	out	PORTC, temp
-0000d0 9aab                      	sbi	PORTC, LCD_E
-0000d1 0000                      	nop
-0000d2 0000                      	nop
+0000d1 bb05                      	out	PORTC, temp
+0000d2 9aab                      	sbi	PORTC, LCD_E
 0000d3 0000                      	nop
-0000d4 98ab                      	cbi	PORTC, LCD_E
-0000d5 911f                      	pop	argument
-0000d6 700f                      	cbr	temp, 0b11110000
-0000d7 9512                      	swap	argument
-0000d8 7f10                      	cbr	argument, 0b00001111
-0000d9 2b01                      	or	temp, argument
-0000da bb05                      	out	PORTC, temp
-0000db 9aab                      	sbi	PORTC, LCD_E
-0000dc 0000                      	nop
-0000dd 0000                      	nop
+0000d4 0000                      	nop
+0000d5 0000                      	nop
+0000d6 98ab                      	cbi	PORTC, LCD_E
+0000d7 911f                      	pop	argument
+0000d8 700f                      	cbr	temp, 0b11110000
+0000d9 9512                      	swap	argument
+0000da 7f10                      	cbr	argument, 0b00001111
+0000db 2b01                      	or	temp, argument
+0000dc bb05                      	out	PORTC, temp
+0000dd 9aab                      	sbi	PORTC, LCD_E
 0000de 0000                      	nop
-0000df 98ab                      	cbi	PORTC, LCD_E
-0000e0 b304                      	in	temp, DDRC
-0000e1 700f                      	cbr	temp, 0b11110000
-0000e2 bb04                      	out	DDRC, temp
-0000e3 9508                      ret
+0000df 0000                      	nop
+0000e0 0000                      	nop
+0000e1 98ab                      	cbi	PORTC, LCD_E
+0000e2 b304                      	in	temp, DDRC
+0000e3 700f                      	cbr	temp, 0b11110000
+0000e4 bb04                      	out	DDRC, temp
+0000e5 9508                      ret
                                  
                                  LCD_getchar:
-0000e4 b304                      	in	temp, DDRC		;make sure the data lines are inputs
-0000e5 700f                      	andi	temp, 0b00001111	;so clear their DDR bits
-0000e6 bb04                      	out	DDRC, temp
-0000e7 9aa9                      	sbi	PORTC, LCD_RS		;we want to access the char data register, so RS high
-0000e8 9aaa                      	sbi	PORTC, LCD_RW		;we also want to read from the LCD -> RW high
-0000e9 9aab                      	sbi	PORTC, LCD_E		;while E is high
-0000ea 0000                      	nop
-0000eb b303                      	in	temp, PINC		;we need to fetch the HIGH nibble
-0000ec 7f00                      	andi	temp, 0b11110000	;mask off the control line data
-0000ed 2f20                      	mov	return, temp		;and copy the HIGH nibble to return
-0000ee 98ab                      	cbi	PORTC, LCD_E		;now take E low again
-0000ef 0000                      	nop				;wait a bit before strobing E again
-0000f0 0000                      	nop	
-0000f1 9aab                      	sbi	PORTC, LCD_E		;same as above, now we're reading the low nibble
-0000f2 0000                      	nop
-0000f3 b303                      	in	temp, PINC		;get the data
-0000f4 7f00                      	andi	temp, 0b11110000	;and again mask off the control line bits
-0000f5 9502                      	swap	temp			;temp HIGH nibble contains data LOW nibble! so swap
-0000f6 2b20                      	or	return, temp		;and combine with previously read high nibble
-0000f7 98ab                      	cbi	PORTC, LCD_E		;take all control lines low again
-0000f8 98a9                      	cbi	PORTC, LCD_RS
-0000f9 98aa                      	cbi	PORTC, LCD_RW
-0000fa 9508                      ret					;the character read from the LCD is now in return
+0000e6 b304                      	in	temp, DDRC		;make sure the data lines are inputs
+0000e7 700f                      	andi	temp, 0b00001111	;so clear their DDR bits
+0000e8 bb04                      	out	DDRC, temp
+0000e9 9aa9                      	sbi	PORTC, LCD_RS		;we want to access the char data register, so RS high
+0000ea 9aaa                      	sbi	PORTC, LCD_RW		;we also want to read from the LCD -> RW high
+0000eb 9aab                      	sbi	PORTC, LCD_E		;while E is high
+0000ec 0000                      	nop
+0000ed b303                      	in	temp, PINC		;we need to fetch the HIGH nibble
+0000ee 7f00                      	andi	temp, 0b11110000	;mask off the control line data
+0000ef 2f20                      	mov	return, temp		;and copy the HIGH nibble to return
+0000f0 98ab                      	cbi	PORTC, LCD_E		;now take E low again
+0000f1 0000                      	nop				;wait a bit before strobing E again
+0000f2 0000                      	nop	
+0000f3 9aab                      	sbi	PORTC, LCD_E		;same as above, now we're reading the low nibble
+0000f4 0000                      	nop
+0000f5 b303                      	in	temp, PINC		;get the data
+0000f6 7f00                      	andi	temp, 0b11110000	;and again mask off the control line bits
+0000f7 9502                      	swap	temp			;temp HIGH nibble contains data LOW nibble! so swap
+0000f8 2b20                      	or	return, temp		;and combine with previously read high nibble
+0000f9 98ab                      	cbi	PORTC, LCD_E		;take all control lines low again
+0000fa 98a9                      	cbi	PORTC, LCD_RS
+0000fb 98aa                      	cbi	PORTC, LCD_RW
+0000fc 9508                      ret					;the character read from the LCD is now in return
                                  
                                  LCD_getaddr:	;works just like LCD_getchar, but with RS low, return.7 is the busy flag
-0000fb b304                      	in	temp, DDRC
-0000fc 700f                      	andi	temp, 0b00001111
-0000fd bb04                      	out	DDRC, temp
-0000fe 98a9                      	cbi	PORTC, LCD_RS
-0000ff 9aaa                      	sbi	PORTC, LCD_RW
-000100 9aab                      	sbi	PORTC, LCD_E
-000101 0000                      	nop
-000102 b303                      	in	temp, PINC
-000103 7f00                      	andi	temp, 0b11110000
-000104 2f20                      	mov	return, temp
-000105 98ab                      	cbi	PORTC, LCD_E
-000106 0000                      	nop
-000107 0000                      	nop
-000108 9aab                      	sbi	PORTC, LCD_E
+0000fd b304                      	in	temp, DDRC
+0000fe 700f                      	andi	temp, 0b00001111
+0000ff bb04                      	out	DDRC, temp
+000100 98a9                      	cbi	PORTC, LCD_RS
+000101 9aaa                      	sbi	PORTC, LCD_RW
+000102 9aab                      	sbi	PORTC, LCD_E
+000103 0000                      	nop
+000104 b303                      	in	temp, PINC
+000105 7f00                      	andi	temp, 0b11110000
+000106 2f20                      	mov	return, temp
+000107 98ab                      	cbi	PORTC, LCD_E
+000108 0000                      	nop
 000109 0000                      	nop
-00010a b303                      	in	temp, PINC
-00010b 7f00                      	andi	temp, 0b11110000
-00010c 9502                      	swap	temp
-00010d 2b20                      	or	return, temp
-00010e 98ab                      	cbi	PORTC, LCD_E
-00010f 98aa                      	cbi	PORTC, LCD_RW
-000110 9508                      ret
+00010a 9aab                      	sbi	PORTC, LCD_E
+00010b 0000                      	nop
+00010c b303                      	in	temp, PINC
+00010d 7f00                      	andi	temp, 0b11110000
+00010e 9502                      	swap	temp
+00010f 2b20                      	or	return, temp
+000110 98ab                      	cbi	PORTC, LCD_E
+000111 98aa                      	cbi	PORTC, LCD_RW
+000112 9508                      ret
                                  
                                  LCD_wait:				;read address and busy flag until busy flag cleared
-000111 dfe9                      	rcall	LCD_getaddr
-000112 7820                      	andi	return, 0x80
-000113 f7e9                      	brne	LCD_wait
-000114 9508                      	ret
+000113 dfe9                      	rcall	LCD_getaddr
+000114 7820                      	andi	return, 0x80
+000115 f7e9                      	brne	LCD_wait
+000116 9508                      	ret
                                  
                                  
                                  LCD_delay:
-000115 2422                      	clr	r2
+000117 2422                      	clr	r2
                                  	LCD_delay_outer:
-000116 2433                      	clr	r3
+000118 2433                      	clr	r3
                                  		LCD_delay_inner:
-000117 943a                      		dec	r3
-000118 f7f1                      		brne	LCD_delay_inner
-000119 942a                      	dec	r2
-00011a f7d9                      	brne	LCD_delay_outer
-00011b 9508                      ret
+000119 943a                      		dec	r3
+00011a f7f1                      		brne	LCD_delay_inner
+00011b 942a                      	dec	r2
+00011c f7d9                      	brne	LCD_delay_outer
+00011d 9508                      ret
                                  
                                  LCD_init:
                                  	
-00011c e00e                      	ldi	temp, 0b00001110	;control lines are output, rest is input
-00011d bb04                      	out	DDRC, temp
+00011e e00e                      	ldi	temp, 0b00001110	;control lines are output, rest is input
+00011f bb04                      	out	DDRC, temp
                                  	
-00011e dff6                      	rcall	LCD_delay		;first, we'll tell the LCD that we want to use it
-00011f e210                      	ldi	argument, 0x20		;in 4-bit mode.
-000120 df75                      	rcall	LCD_command8		;LCD is still in 8-BIT MODE while writing this command!!!
+000120 dff6                      	rcall	LCD_delay		;first, we'll tell the LCD that we want to use it
+000121 e210                      	ldi	argument, 0x20		;in 4-bit mode.
+000122 df75                      	rcall	LCD_command8		;LCD is still in 8-BIT MODE while writing this command!!!
                                  
-000121 dfef                      	rcall	LCD_wait
-000122 e218                      	ldi	argument, 0x28		;NOW: 2 lines, 5*7 font, 4-BIT MODE!
-000123 dfa3                      	rcall	LCD_command		;
+000123 dfef                      	rcall	LCD_wait
+000124 e218                      	ldi	argument, 0x28		;NOW: 2 lines, 5*7 font, 4-BIT MODE!
+000125 dfa3                      	rcall	LCD_command		;
                                  	
-000124 dfec                      	rcall	LCD_wait
-000125 e01f                      	ldi	argument, 0x0F		;now proceed as usual: Display on, cursor on, blinking
-000126 dfa0                      	rcall	LCD_command
+000126 dfec                      	rcall	LCD_wait
+000127 e01f                      	ldi	argument, 0x0F		;now proceed as usual: Display on, cursor on, blinking
+000128 dfa0                      	rcall	LCD_command
                                  	
-000127 dfe9                      	rcall	LCD_wait
-000128 e011                      	ldi	argument, 0x01		;clear display, cursor -> home
-000129 df9d                      	rcall	LCD_command
+000129 dfe9                      	rcall	LCD_wait
+00012a e011                      	ldi	argument, 0x01		;clear display, cursor -> home
+00012b df9d                      	rcall	LCD_command
                                  	
-00012a dfe6                      	rcall	LCD_wait
-00012b e016                      	ldi	argument, 0x06		;auto-inc cursor
-00012c df9a                      	rcall	LCD_command
+00012c dfe6                      	rcall	LCD_wait
+00012d e016                      	ldi	argument, 0x06		;auto-inc cursor
+00012e df9a                      	rcall	LCD_command
 
 
 RESOURCE USE INFORMATION
@@ -1267,7 +1270,7 @@ counted separately from r26..r31 here.
 "ATmega16" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   2 r1 :   1 r2 :   4 r3 :   3 r4 :   3 
 r5 :   1 r6 :   5 r7 :   5 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 121 r17:  42 r18:   5 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16: 122 r17:  42 r18:   5 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 11 out of 35 (31.4%)
@@ -1283,21 +1286,21 @@ clc   :   0 clh   :   0 cli   :   2 cln   :   0 clr   :   2 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   2 cp    :   2 cpc   :   0 
 cpi   :   5 cpse  :   0 dec   :   4 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :  26 inc   :   1 jmp   :   9 
-ld    :   0 ldd   :   0 ldi   :  23 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  24 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   1 mov   :  20 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :  23 or    :   7 ori   :   2 out   :  26 pop   :   2 
 push  :   2 rcall :  11 ret   :   9 reti  :   0 rjmp  :   0 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :  14 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   3 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
+sez   :   0 sleep :   1 spm   :   0 st    :   0 std   :   0 sts   :   0 
 sub   :   0 subi  :   1 swap  :   4 tst   :   0 wdr   :   0 
-Instructions used: 35 out of 113 (31.0%)
+Instructions used: 36 out of 113 (31.9%)
 
 "ATmega16" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x00025c    552      0    552   16384   3.4%
+[.cseg] 0x000000 0x000260    556      0    556   16384   3.4%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
