@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\Debug\FlashToLCD.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>FlashToLCD.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>FlashToLCD.map</FILE>
+  <FILE>FlashToLCD.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <reset><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>57</LINE></reset>
+  <LCDTABLE><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>41</LINE></LCDTABLE>
+  <LCD_init><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>276</LINE></LCD_init>
+  <READ_CHAR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>77</LINE></READ_CHAR>
+  <LCD_wait><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>258</LINE></LCD_wait>
+  <LCD_putchar><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>141</LINE></LCD_putchar>
+  <end><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>89</LINE></end>
+  <LCD_command><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>177</LINE></LCD_command>
+  <LCD_getchar><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>209</LINE></LCD_getchar>
+  <LCD_delay><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>265</LINE></LCD_delay>
+  <loop><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>117</LINE></loop>
+  <lcd_command8><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>119</LINE></lcd_command8>
+  <LCD_getaddr><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>234</LINE></LCD_getaddr>
+  <LCD_delay_outer><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>267</LINE></LCD_delay_outer>
+  <LCD_delay_inner><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework04\FlashToLCD\FlashToLCD\FlashToLCD\main.asm</FILE><LINE>269</LINE></LCD_delay_inner>
+ </LABELS>
+</ASSEMBLER_INFO>
