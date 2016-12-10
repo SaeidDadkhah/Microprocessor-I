@@ -1,0 +1,29 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\Debug\a-int1_LED.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>a-int1_LED.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>a-int1_LED.map</FILE>
+  <FILE>a-int1_LED.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RST_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\main.asm</FILE><LINE>24</LINE></RST_ISR>
+  <EXT_INT1_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\main.asm</FILE><LINE>13</LINE></EXT_INT1_ISR>
+  <LAST_LINE><FILE>C:\Users\Saeid Dadkhah\Desktop\6-(S09-Q03)\a-int1_LED\a-int1_LED\a-int1_LED\main.asm</FILE><LINE>58</LINE></LAST_LINE>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\Debug\c-LED.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>c-LED.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>c-LED.map</FILE>
+  <FILE>c-LED.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RST_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>23</LINE></RST_ISR>
+  <EXT_INT1_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>14</LINE></EXT_INT1_ISR>
+  <START><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>34</LINE></START>
+  <BLINK><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>42</LINE></BLINK>
+  <TURN_ON><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>51</LINE></TURN_ON>
+  <TURN_OFF><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>59</LINE></TURN_OFF>
+  <DELAY><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>68</LINE></DELAY>
+  <LOOP1><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>70</LINE></LOOP1>
+  <LOOP2><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>72</LINE></LOOP2>
+  <LOOP3><FILE>C:\Users\Saeid Dadkhah\Desktop\3-(S09-Q02)\c-LED\c-LED\main.asm</FILE><LINE>74</LINE></LOOP3>
+ </LABELS>
+</ASSEMBLER_INFO>
