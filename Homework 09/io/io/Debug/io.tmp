@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\Debug\io.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>io.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>io.map</FILE>
+  <FILE>io.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RST_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>23</LINE></RST_ISR>
+  <INT1_ISR><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>13</LINE></INT1_ISR>
+  <READ_BUFFER><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>38</LINE></READ_BUFFER>
+  <NUM_2_7SEG><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>52</LINE></NUM_2_7SEG>
+  <PUT_NUM><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>106</LINE></PUT_NUM>
+  <END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>36</LINE></END>
+  <N27S_NOT0><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>60</LINE></N27S_NOT0>
+  <N27S_END><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>103</LINE></N27S_END>
+  <N27S_NOT1><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>66</LINE></N27S_NOT1>
+  <N27S_NOT2><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>72</LINE></N27S_NOT2>
+  <N27S_NOT3><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>78</LINE></N27S_NOT3>
+  <N27S_NOT4><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>84</LINE></N27S_NOT4>
+  <N27S_NOT5><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>90</LINE></N27S_NOT5>
+  <N27S_NOT6><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>96</LINE></N27S_NOT6>
+  <N27S_NOT7><FILE>C:\Users\Saeid Dadkhah\Desktop\Homework09\io\io\main.asm</FILE><LINE>102</LINE></N27S_NOT7>
+ </LABELS>
+</ASSEMBLER_INFO>
